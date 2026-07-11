@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerCharacter : CharacterSettings
 {
     public Keyboard keyboard;
-  
+    public bool Is_Player_Moving;
    protected void Start()
     {
         keyboard = Keyboard.current;     
@@ -19,16 +19,19 @@ public class PlayerCharacter : CharacterSettings
     }     
     protected override void Moving()
     {
+        
         if (IsMoving() == true)
         {
             if (keyboard.wKey.isPressed) MoveDir = transform.forward;
             if (keyboard.aKey.isPressed) MoveDir = -transform.right;
             if (keyboard.sKey.isPressed) MoveDir = -transform.forward;
             if (keyboard.dKey.isPressed) MoveDir = transform.right;
+            Is_Player_Moving = true;
         }
         else
         {
             MoveDir = Vector3.zero;
+            Is_Player_Moving = false;
             return;
         }
     }

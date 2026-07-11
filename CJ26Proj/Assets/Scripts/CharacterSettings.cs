@@ -24,9 +24,16 @@ using UnityEngine;
     //GameObject assignements
     protected Transform tPlayer;
     protected Transform tEnemy;
+
+
     protected virtual void Awake()
     {
-    //finding by their tags
+        CharacterAssignment();
+    }
+        //Object assignment
+    protected void CharacterAssignment()
+    {
+        //finding by their tags
         GameObject player = GameObject.FindWithTag("Player");
         GameObject enemy = GameObject.FindWithTag("Enemy");
         //assigning them here instead of inspector
@@ -51,6 +58,13 @@ using UnityEngine;
         get { return standing_still; }
         set { standing_still = value; }
     }
+   
+   /* [SerializeField] protected bool Is_Player_Moving;
+    protected virtual bool IsPlayerMove
+    {
+        get { return Is_Player_Moving; }
+        set { Is_Player_Moving = value; }
+    } */
 
     //Physics stuff
     protected virtual Vector3 MoveDir { get; set; }
