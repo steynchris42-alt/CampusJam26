@@ -8,6 +8,13 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float cam_y_rot;
     [SerializeField] private float cam_Z_rot = 0.0f;
 
+    public void Start()
+    {
+        if (Camera == null)
+        {
+            Camera = Camera.main;
+        }
+    }
     public void Update()
     {
         cam_x_rot = Camera.transform.eulerAngles.x;

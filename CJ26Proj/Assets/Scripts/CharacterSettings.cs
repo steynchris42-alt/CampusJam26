@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -24,8 +25,6 @@ using UnityEngine;
     //GameObject assignements
     protected Transform tPlayer;
     protected Transform tEnemy;
-
-
     protected virtual void Awake()
     {
         CharacterAssignment();
@@ -45,26 +44,33 @@ using UnityEngine;
     }
 
     //Speed settings//
-    [SerializeField]private float move_speed = 10.0f;
+    [SerializeField]private float move_speed = 20.0f;
    protected virtual float _MoveSpeed
     {
         get { return move_speed; }
         set { move_speed = value; }
     }
 
-   [SerializeField] private float standing_still = 0.0f;
-    protected virtual float _StandingStill
+    [SerializeField] private float base_move_speed = 20.0f;
+    protected virtual float Base_MoveSpeed
+    {
+        get { return base_move_speed; }
+        set { base_move_speed = value; }
+    }
+    [SerializeField] private float xmove_speed = 20.0f;
+    protected virtual float x_MoveSpeed
+    {
+        get { return xmove_speed; }
+        set { xmove_speed = value; }
+    }
+
+
+    [SerializeField] private float standing_still = 0.0f;
+  protected virtual float _StandingStill
     {
         get { return standing_still; }
         set { standing_still = value; }
     }
-   
-   /* [SerializeField] protected bool Is_Player_Moving;
-    protected virtual bool IsPlayerMove
-    {
-        get { return Is_Player_Moving; }
-        set { Is_Player_Moving = value; }
-    } */
 
     //Physics stuff
     protected virtual Vector3 MoveDir { get; set; }
@@ -73,9 +79,11 @@ using UnityEngine;
 
     //boolean State switches//
     abstract protected bool IsMoving();
-        
+    abstract protected bool IsSprinting();
+
     //movement logic
     abstract protected void Moving();
-
+    abstract protected void Die();
+    protected enum MoveStates {walking, sprinting }
    
     }

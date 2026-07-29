@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Startmenu.uss?fileID=7433441132597879392&amp;guid=18c4e07e1d3505c479191af05b1921f8&amp;type=3#Startmenu"/>
+    <ui:VisualElement style="flex-grow: 1;"/>
+    <ui:Label text="DAVES SHAME&#10;" style="top: -57%; -unity-text-align: upper-center; font-size: 21px;"/>
+    <ui:Button text="START" name="Start" focusable="false" style="top: -42%;"/>
+    <ui:Button text="Button" name="Quit" style="top: -32%;"/>
+</ui:UXML>

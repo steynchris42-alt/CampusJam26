@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Hotp.uss?fileID=7433441132597879392&amp;guid=52bd7703a26111245af7cadb73c8e760&amp;type=3#Hotp"/>
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="WASD to move&#10;When standing Still dave cannot sense your echo&#10;Collect all 10 mirrors to win&#10;" name="Tut" style="top: 214px; justify-content: center; align-items: center;"/>
+    </ui:VisualElement>
+    <ui:Button text="NEXT&#10;" name="NEXT" focusable="false"/>
+    <ui:Label text="Label" name="Tut" style="top: -284px; justify-content: center; align-items: center;"/>
+</ui:UXML>
